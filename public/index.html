@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueenChip - Keripik Pisang Lumer Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        amber: {
+                            50: '#fffbe1',
+                            100: '#fef3c7',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                            950: '#451a03',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-amber-50/50 text-gray-800 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-amber-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <div>
+                        <a href="#hero" class="text-2xl sm:text-3xl font-extrabold text-amber-950 tracking-tight">
+                            Queen<span class="text-amber-500">Chip</span>
+                        </a>
+                        <span class="block text-[10px] font-bold uppercase tracking-widest text-amber-700 -mt-1">Banana Chips</span>
+                    </div>
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-6 font-semibold text-gray-600 text-sm">
+                    <a href="#hero" class="hover:text-amber-600 transition">Beranda</a>
+                    <a href="#katalog" class="hover:text-amber-600 transition">Katalog</a>
+                    <a href="#event" class="hover:text-amber-600 transition">Event & Challenge</a>
+                    <a href="#ulasan" class="hover:text-amber-600 transition">Ulasan</a>
+                    <a href="#tentang" class="hover:text-amber-600 transition">Keunggulan</a>
+                    <a href="#faq" class="hover:text-amber-600 transition">FAQ</a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <div class="hidden sm:flex items-center gap-2 border-r border-gray-200 pr-3">
+                        <a href="https://tiktok.com" target="_blank" title="TikTok Shop" class="w-9 h-9 rounded-xl bg-gray-100 hover:bg-black hover:text-white flex items-center justify-center text-gray-700 transition">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="https://shopee.co.id" target="_blank" title="Shopee" class="w-9 h-9 rounded-xl bg-gray-100 hover:bg-orange-500 hover:text-white flex items-center justify-center text-gray-700 transition">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" title="Instagram" class="w-9 h-9 rounded-xl bg-gray-100 hover:bg-pink-600 hover:text-white flex items-center justify-center text-gray-700 transition">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+
+                    <button onclick="toggleCartDrawer()" class="relative bg-amber-500 hover:bg-amber-600 text-white px-5 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-amber-500/25 transition active:scale-95">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="hidden sm:inline">Keranjang</span>
+                        <span id="cart-badge" class="bg-amber-800 text-white text-xs px-2 py-0.5 rounded-full font-bold">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left space-y-6">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-amber-950 leading-tight">
+                        Sensasi Renyah <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">Lumer Di Setiap Gigitan!</span>
+                    </h1>
+                    <p class="text-gray-600 text-lg max-w-xl mx-auto lg:mx-0">
+                        QueenChip menghadirkan keripik pisang olahan higienis dengan baluran cokelat lumer melimpah. Tersedia 4 varian rasa favorit yang siap menemani aktivitas harianmu.
+                    </p>
+
+                    <div class="pt-2">
+                        <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Tersedia Juga Di Store Resmi Kami:</p>
+                        <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+                            <a href="https://tiktok.com" target="_blank" class="flex items-center gap-2 bg-black text-white px-4 py-2.5 rounded-xl text-xs font-bold hover:bg-gray-800 transition">
+                                <i class="fa-brands fa-tiktok text-base"></i> TikTok Shop
+                            </a>
+                            <a href="https://shopee.co.id" target="_blank" class="flex items-center gap-2 bg-orange-500 text-white px-4 py-2.5 rounded-xl text-xs font-bold hover:bg-orange-600 transition">
+                                <i class="fa-solid fa-bag-shopping text-base"></i> Shopee
+                            </a>
+                            <a href="https://instagram.com" target="_blank" class="flex items-center gap-2 bg-pink-600 text-white px-4 py-2.5 rounded-xl text-xs font-bold hover:bg-pink-700 transition">
+                                <i class="fa-brands fa-instagram text-base"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#katalog" class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-2xl font-bold text-center shadow-xl shadow-amber-500/30 transition transform hover:-translate-y-0.5">
+                            Pesan Sekarang <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#tentang" class="bg-white hover:bg-gray-50 border border-gray-200 text-gray-700 px-8 py-4 rounded-2xl font-bold text-center transition">
+                            Lihat Keunggulan
+                        </a>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="absolute -inset-4 bg-amber-400/20 rounded-full blur-3xl -z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1528751014936-863e6e4a319c?auto=format&fit=crop&w=800&q=80" alt="QueenChip Banana Chips" class="w-full max-w-md rounded-3xl shadow-2xl border-4 border-white transform hover:rotate-2 transition duration-500 object-cover h-96">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Filter Bar -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+        <div class="bg-white p-4 sm:p-6 rounded-3xl shadow-xl shadow-amber-900/5 border border-amber-100 flex flex-col md:flex-row gap-4 items-center justify-between">
+            <div class="relative w-full md:w-96">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                <input type="text" id="search-input" onkeyup="filterProducts()" placeholder="Cari varian rasa..." class="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm font-medium">
+            </div>
+
+            <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0">
+                <button onclick="setFilter('all')" class="filter-btn active bg-amber-500 text-white px-5 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap shadow-md">Semua Rasa</button>
+                <button onclick="setFilter('Coklat')" class="filter-btn bg-gray-100 text-gray-600 hover:bg-gray-200 px-5 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap">Coklat</button>
+                <button onclick="setFilter('Strawberry')" class="filter-btn bg-gray-100 text-gray-600 hover:bg-gray-200 px-5 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap">Strawberry</button>
+                <button onclick="setFilter('Matcha')" class="filter-btn bg-gray-100 text-gray-600 hover:bg-gray-200 px-5 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap">Matcha</button>
+                <button onclick="setFilter('Tiramisu')" class="filter-btn bg-gray-100 text-gray-600 hover:bg-gray-200 px-5 py-2.5 rounded-xl text-sm font-bold whitespace-nowrap">Tiramisu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Katalog Produk -->
+    <section id="katalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-3xl font-extrabold text-amber-950">Varian Rasa Populer</h2>
+            <p class="text-gray-500 mt-2">Pilih ukuran gramasi yang kamu inginkan dan nikmati kelezatan keripik pisang lumer QueenChip!</p>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+    </section>
+
+    <!-- Event & Challenge Section -->
+    <section id="event" class="py-20 bg-amber-100/60 my-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-amber-600 font-extrabold text-xs uppercase tracking-widest">Keseruan Seru</span>
+                <h2 class="text-3xl font-extrabold text-amber-950 mt-1">Event & Challenge Berhadiah</h2>
+                <p class="text-gray-600 mt-2 text-sm">Ikuti tantangan kreatif pembuatan konten di media sosial dan menangkan total hadiah jutaan rupiah!</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-3xl overflow-hidden border border-amber-200 shadow-xl flex flex-col sm:flex-row items-center">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80" alt="TikTok Challenge" class="w-full sm:w-1/2 h-64 object-cover">
+                    <div class="p-6 space-y-3">
+                        <span class="bg-pink-100 text-pink-700 font-bold text-[10px] px-3 py-1 rounded-full uppercase">TikTok Challenge</span>
+                        <h3 class="font-extrabold text-lg text-amber-950">#LumerGakNahan Challenge</h3>
+                        <p class="text-xs text-gray-500">Buat video reaksi pertama kali nyobain QueenChip rasa pilihanmu di TikTok. Tag akun kami!</p>
+                        <div class="text-xs font-bold text-amber-600">🎁 Hadiah: Tabungan Rp 1.500.000 + Free Snack 1 Tahun</div>
+                        <a href="https://tiktok.com" target="_blank" class="inline-block text-xs font-bold text-white bg-black hover:bg-gray-800 px-4 py-2 rounded-xl transition">Ikut Challenge</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl overflow-hidden border border-amber-200 shadow-xl flex flex-col sm:flex-row items-center">
+                    <img src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?auto=format&fit=crop&w=600&q=80" alt="Instagram Photo Contest" class="w-full sm:w-1/2 h-64 object-cover">
+                    <div class="p-6 space-y-3">
+                        <span class="bg-amber-100 text-amber-800 font-bold text-[10px] px-3 py-1 rounded-full uppercase">Instagram Contest</span>
+                        <h3 class="font-extrabold text-lg text-amber-950">Foto Estetik QueenChip</h3>
+                        <p class="text-xs text-gray-500">Upload foto estetik saat menikmati QueenChip di sore hari. Cantumkan hashtag #QueenChipTime.</p>
+                        <div class="text-xs font-bold text-amber-600">🎁 Hadiah: Voucher Belanja Rp 500.000 (3 Pemenang)</div>
+                        <a href="https://instagram.com" target="_blank" class="inline-block text-xs font-bold text-white bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-xl transition">Lihat Info Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ulasan Pembeli Section -->
+    <section id="ulasan" class="py-20 bg-white border-t border-amber-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-amber-600 font-extrabold text-xs uppercase tracking-widest">Kata Mereka</span>
+                <h2 class="text-3xl font-extrabold text-amber-950 mt-1">Ulasan Pelanggan Setia</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-amber-50/40 p-6 rounded-3xl border border-amber-100 shadow-sm space-y-4">
+                    <div class="flex items-center gap-1 text-amber-500 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 italic">"Coklat lumernya ga pelit sama sekali! Keripik pisangnya tetep renyah walau udah lumayan lama dibuka."</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center text-sm">S</div>
+                        <div>
+                            <h4 class="font-bold text-xs text-amber-950">Siti Rahmawati</h4>
+                            <span class="text-[10px] text-gray-400">Pembeli via Shopee</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50/40 p-6 rounded-3xl border border-amber-100 shadow-sm space-y-4">
+                    <div class="flex items-center gap-1 text-amber-500 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 italic">"Rasa matcha nya dapet banget, ga bikin enek. Anak-anak di rumah juga suka banget sama varian Strawberry-nya."</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-amber-700 text-white font-bold flex items-center justify-center text-sm">A</div>
+                        <div>
+                            <h4 class="font-bold text-xs text-amber-950">Andi Pratama</h4>
+                            <span class="text-[10px] text-gray-400">Pembeli via WhatsApp</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50/40 p-6 rounded-3xl border border-amber-100 shadow-sm space-y-4">
+                    <div class="flex items-center gap-1 text-amber-500 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 italic">"Kemasan rapi aman dikirim keluar kota. Beli kemasan 1 kg buat stok camilan sambil ngerjain tugas!"</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-pink-600 text-white font-bold flex items-center justify-center text-sm">N</div>
+                        <div>
+                            <h4 class="font-bold text-xs text-amber-950">Nadia Putri</h4>
+                            <span class="text-[10px] text-gray-400">Pembeli via TikTok Shop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keunggulan Section -->
+    <section id="tentang" class="py-20 bg-amber-50/30 border-t border-amber-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-amber-600 font-extrabold text-xs uppercase tracking-widest">Kenapa Memilih Kami</span>
+                <h2 class="text-3xl font-extrabold text-amber-950 mt-1">Keunggulan QueenChip</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl border border-amber-100 text-center hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6 shadow-lg shadow-amber-500/30"><i class="fa-solid fa-lemon"></i></div>
+                    <h3 class="text-xl font-bold text-amber-950 mb-2">Bahan Lokal Berkualitas</h3>
+                    <p class="text-gray-600 text-sm">Dibuat dari pisang kepok pilihan petani lokal yang dipetik tepat waktu untuk tekstur renyah alami.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-amber-100 text-center hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6 shadow-lg shadow-amber-500/30"><i class="fa-solid fa-cookie-bite"></i></div>
+                    <h3 class="text-xl font-bold text-amber-950 mb-2">Cokelat Premium Lumer</h3>
+                    <p class="text-gray-600 text-sm">Menggunakan glaze cokelat premium tebal yang tidak gatal di tenggorokan dan melimpah di setiap chip.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-amber-100 text-center hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6 shadow-lg shadow-amber-500/30"><i class="fa-solid fa-paper-plane"></i></div>
+                    <h3 class="text-xl font-bold text-amber-950 mb-2">Pesan Cepat via WhatsApp</h3>
+                    <p class="text-gray-600 text-sm">Tanpa ribet buat akun! Pilih varian, klik keranjang, dan kirim format pemesanan otomatis ke WhatsApp Admin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold text-amber-950">Pertanyaan Umum (FAQ)</h2>
+            <p class="text-gray-500 mt-2">Segala hal yang perlu kamu ketahui tentang pemesanan QueenChip</p>
+        </div>
+
+        <div class="space-y-4">
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                <button onclick="toggleFaq(1)" class="w-full text-left p-5 font-bold text-amber-950 flex justify-between items-center">
+                    <span>Berapa lama daya tahan QueenChip?</span>
+                    <i id="faq-icon-1" class="fa-solid fa-chevron-down text-gray-400 transition transform"></i>
+                </button>
+                <div id="faq-answer-1" class="hidden p-5 pt-0 text-gray-600 text-sm border-t border-gray-100">
+                    QueenChip tahan hingga 2 bulan dalam kemasan ter-seal rapat. Disarankan disimpan di suhu ruangan dan terhindar dari sinar matahari langsung.
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                <button onclick="toggleFaq(2)" class="w-full text-left p-5 font-bold text-amber-950 flex justify-between items-center">
+                    <span>Apakah bisa kirim ke luar kota?</span>
+                    <i id="faq-icon-2" class="fa-solid fa-chevron-down text-gray-400 transition transform"></i>
+                </button>
+                <div id="faq-answer-2" class="hidden p-5 pt-0 text-gray-600 text-sm border-t border-gray-100">
+                    Bisa banget! Setiap kemasan dilindungi dengan bubble wrap tebal agar keripik pisang aman dan tidak hancur saat perjalanan pengiriman ekspedisi.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-950 text-white pt-16 pb-12 border-t border-amber-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-4">
+                    <div>
+                        <span class="text-2xl font-extrabold tracking-tight">Queen<span class="text-amber-500">Chip</span></span>
+                        <span class="block text-[10px] font-bold uppercase tracking-widest text-amber-400">Banana Chips</span>
+                    </div>
+                    <p class="text-amber-200/70 text-sm">Pelopor keripik pisang aneka rasa lumer dengan kualitas premium dan terjangkau.</p>
+                    
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="https://tiktok.com" target="_blank" class="w-9 h-9 rounded-xl bg-amber-900 hover:bg-black flex items-center justify-center text-white transition">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="https://shopee.co.id" target="_blank" class="w-9 h-9 rounded-xl bg-amber-900 hover:bg-orange-500 flex items-center justify-center text-white transition">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="w-9 h-9 rounded-xl bg-amber-900 hover:bg-pink-600 flex items-center justify-center text-white transition">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-amber-400">Navigasi</h4>
+                    <ul class="space-y-2 text-sm text-amber-200/70">
+                        <li><a href="#hero" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="#katalog" class="hover:text-white transition">Katalog Product</a></li>
+                        <li><a href="#event" class="hover:text-white transition">Event & Challenge</a></li>
+                        <li><a href="#ulasan" class="hover:text-white transition">Ulasan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-amber-400">Varian Rasa</h4>
+                    <ul class="space-y-2 text-sm text-amber-200/70">
+                        <li>Keripik Pisang Coklat</li>
+                        <li>Keripik Pisang Strawberry</li>
+                        <li>Keripik Pisang Matcha</li>
+                        <li>Keripik Pisang Tiramisu</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-amber-400">Hubungi Kami</h4>
+                    <p class="text-sm text-amber-200/70">WhatsApp Admin: +62 812-3456-7890</p>
+                    <p class="text-sm text-amber-200/70 mt-1">Lokasi: Jakarta, Indonesia</p>
+                </div>
+            </div>
+            <div class="border-t border-amber-900/60 pt-8 text-center text-xs text-amber-200/50">
+                &copy; {{ date('Y') }} QueenChip Official. Built with Laravel 13.
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DETAIL PRODUK -->
+    <div id="product-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 relative shadow-2xl">
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 p-2">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div id="modal-content" class="space-y-6"></div>
+        </div>
+    </div>
+
+    <!-- CART DRAWER -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+        <div onclick="toggleCartDrawer()" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+        <div class="absolute top-0 right-0 bottom-0 w-full max-w-md bg-white shadow-2xl flex flex-col">
+            <div class="p-6 border-b border-gray-100 flex items-center justify-between bg-amber-50/50">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-cart-shopping text-amber-600 text-xl"></i>
+                    <h3 class="text-lg font-bold text-amber-950">Keranjang Belanja</h3>
+                </div>
+                <button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-gray-600">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4"></div>
+
+            <div class="p-6 border-t border-gray-100 bg-gray-50 space-y-4">
+                <div class="flex justify-between items-center text-sm font-bold">
+                    <span class="text-gray-500">Subtotal</span>
+                    <span id="cart-total" class="text-xl font-black text-amber-600">Rp 0</span>
+                </div>
+                <button onclick="checkoutWhatsApp()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-3.5 rounded-2xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 transition">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    Checkout via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const products = @json($products);
+
+        let cart = [];
+        let currentFilter = 'all';
+
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            const searchVal = document.getElementById('search-input').value.toLowerCase();
+            
+            grid.innerHTML = '';
+
+            const filtered = products.filter(p => {
+                const matchesFilter = currentFilter === 'all' || p.flavor === currentFilter;
+                const matchesSearch = p.name.toLowerCase().includes(searchVal) || p.flavor.toLowerCase().includes(searchVal);
+                return matchesFilter && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <p class="text-gray-400 font-semibold">Varian rasa tidak ditemukan.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(p => {
+                grid.innerHTML += `
+                    <div class="bg-white rounded-3xl overflow-hidden border border-amber-100 shadow-xl shadow-amber-900/5 hover:shadow-2xl transition duration-300 flex flex-col justify-between group">
+                        <div class="relative">
+                            <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-10">${p.badge}</span>
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-amber-950 text-lg leading-snug mb-1">${p.name}</h3>
+                                <p class="text-xs text-gray-500 line-clamp-2">${p.description}</p>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
+                                <div>
+                                    <span class="text-[10px] text-gray-400 font-bold uppercase block">Mulai Dari</span>
+                                    <span class="font-extrabold text-amber-600 text-lg">Rp ${p.pricePer100g.toLocaleString('id-ID')}</span>
+                                </div>
+                                <button onclick="openProductModal(${p.id})" class="bg-amber-100 hover:bg-amber-500 text-amber-800 hover:text-white px-4 py-2.5 rounded-xl font-bold text-xs transition">
+                                    Pilih Size
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function openProductModal(productId) {
+            const product = products.find(p => p.id === productId);
+            const modal = document.getElementById('product-modal');
+            const content = document.getElementById('modal-content');
+
+            content.innerHTML = `
+                <div class="flex items-center gap-4">
+                    <img src="${product.image}" class="w-20 h-20 rounded-2xl object-cover">
+                    <div>
+                        <span class="text-xs font-bold text-amber-600 uppercase tracking-widest">${product.flavor}</span>
+                        <h3 class="font-extrabold text-xl text-amber-950">${product.name}</h3>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-600">${product.description}</p>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Pilih Ukuran / Gramasi:</label>
+                    <div class="grid grid-cols-2 gap-2" id="size-options">
+                        <button onclick="selectSize(100, ${product.pricePer100g})" class="size-btn active border-2 border-amber-500 bg-amber-50 p-3 rounded-2xl text-left">
+                            <span class="block font-bold text-sm">100 Gram</span>
+                            <span class="text-xs text-amber-700 font-bold">Rp ${product.pricePer100g.toLocaleString('id-ID')}</span>
+                        </button>
+                        <button onclick="selectSize(250, ${product.pricePer100g * 2.3})" class="size-btn border-2 border-gray-200 p-3 rounded-2xl text-left">
+                            <span class="block font-bold text-sm">250 Gram</span>
+                            <span class="text-xs text-gray-500 font-bold">Rp ${(product.pricePer100g * 2.3).toLocaleString('id-ID')}</span>
+                        </button>
+                        <button onclick="selectSize(500, ${product.pricePer100g * 4.2})" class="size-btn border-2 border-gray-200 p-3 rounded-2xl text-left">
+                            <span class="block font-bold text-sm">500 Gram</span>
+                            <span class="text-xs text-gray-500 font-bold">Rp ${(product.pricePer100g * 4.2).toLocaleString('id-ID')}</span>
+                        </button>
+                        <button onclick="selectSize(1000, ${product.pricePer100g * 8})" class="size-btn border-2 border-gray-200 p-3 rounded-2xl text-left">
+                            <span class="block font-bold text-sm">1 KG (Hemat)</span>
+                            <span class="text-xs text-gray-500 font-bold">Rp ${(product.pricePer100g * 8).toLocaleString('id-ID')}</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <div>
+                        <span class="block text-[10px] text-gray-400 font-bold uppercase">Total Harga</span>
+                        <span id="modal-calculated-price" class="text-2xl font-black text-amber-600">Rp ${product.pricePer100g.toLocaleString('id-ID')}</span>
+                    </div>
+                    <button onclick="addToCartFromModal(${product.id})" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3.5 rounded-2xl font-bold shadow-lg shadow-amber-500/30 transition">
+                        + Keranjang
+                    </button>
+                </div>
+            `;
+
+            window.selectedModalSize = 100;
+            window.selectedModalPrice = product.pricePer100g;
+
+            modal.classList.remove('hidden');
+        }
+
+        function selectSize(size, price) {
+            window.selectedModalSize = size;
+            window.selectedModalPrice = price;
+
+            document.querySelectorAll('.size-btn').forEach(btn => {
+                btn.classList.remove('border-amber-500', 'bg-amber-50');
+                btn.classList.add('border-gray-200');
+            });
+            event.currentTarget.classList.add('border-amber-500', 'bg-amber-50');
+            document.getElementById('modal-calculated-price').innerText = `Rp ${price.toLocaleString('id-ID')}`;
+        }
+
+        function closeProductModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+        }
+
+        function addToCartFromModal(productId) {
+            const product = products.find(p => p.id === productId);
+            const size = window.selectedModalSize;
+            const price = window.selectedModalPrice;
+
+            const existingIndex = cart.findIndex(item => item.id === productId && item.size === size);
+
+            if (existingIndex > -1) {
+                cart[existingIndex].qty += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    size: size,
+                    price: price,
+                    qty: 1
+                });
+            }
+
+            closeProductModal();
+            updateCartUI();
+            toggleCartDrawer();
+        }
+
+        function updateCartUI() {
+            const cartList = document.getElementById('cart-items');
+            const badge = document.getElementById('cart-badge');
+            const totalElem = document.getElementById('cart-total');
+
+            badge.innerText = cart.reduce((acc, item) => acc + item.qty, 0);
+
+            if (cart.length === 0) {
+                cartList.innerHTML = `<p class="text-center text-gray-400 py-12 text-sm">Keranjang belanja kosong.</p>`;
+                totalElem.innerText = `Rp 0`;
+                return;
+            }
+
+            cartList.innerHTML = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                const subtotal = item.price * item.qty;
+                total += subtotal;
+
+                cartList.innerHTML += `
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-2xl border border-gray-100">
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-800">${item.name}</h4>
+                            <span class="text-xs text-gray-500">Size: ${item.size}g @ Rp ${item.price.toLocaleString('id-ID')}</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="flex items-center border border-gray-200 rounded-lg bg-white">
+                                <button onclick="changeQty(${index}, -1)" class="px-2 py-1 text-xs font-bold text-gray-500">-</button>
+                                <span class="px-2 text-xs font-bold">${item.qty}</span>
+                                <button onclick="changeQty(${index}, 1)" class="px-2 py-1 text-xs font-bold text-gray-500">+</button>
+                            </div>
+                            <button onclick="removeItem(${index})" class="text-gray-400 hover:text-rose-500 text-xs">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            totalElem.innerText = `Rp ${total.toLocaleString('id-ID')}`;
+        }
+
+        function changeQty(index, delta) {
+            cart[index].qty += delta;
+            if (cart[index].qty <= 0) cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function toggleCartDrawer() {
+            document.getElementById('cart-drawer').classList.toggle('hidden');
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) return alert('Keranjang belanjaan Anda masih kosong!');
+
+            if ("geolocation" in navigator) {
+                const shareLoc = confirm("Apakah Anda ingin melampirkan lokasi presisi (Google Maps) untuk mempermudah pengiriman?");
+                
+                if (shareLoc) {
+                    navigator.geolocation.getCurrentPosition(
+                        function(position) {
+                            const lat = position.coords.latitude;
+                            const lng = position.coords.longitude;
+                            const mapsUrl = `https://maps.google.com/?q=${lat},${lng}`;
+                            
+                            sendToWhatsApp(mapsUrl);
+                        },
+                        function(error) {
+                            alert("Lokasi tidak dapat diakses. Pesanan akan dikirim tanpa tautan lokasi.");
+                            sendToWhatsApp(null);
+                        },
+                        { enableHighAccuracy: true, timeout: 10000 }
+                    );
+                } else {
+                    sendToWhatsApp(null);
+                }
+            } else {
+                sendToWhatsApp(null);
+            }
+        }
+
+        function sendToWhatsApp(locationUrl) {
+            const phone = "6281234567890";
+            let text = "Halo Admin QueenChip, saya mau pesan:\n\n";
+
+            let total = 0;
+            cart.forEach((item, i) => {
+                const subtotal = item.price * item.qty;
+                total += subtotal;
+                text += `${i + 1}. *${item.name}* (${item.size}g) x ${item.qty} = Rp ${subtotal.toLocaleString('id-ID')}\n`;
+            });
+
+            text += `\n*Total Belanja:* Rp ${total.toLocaleString('id-ID')}\n`;
+
+            if (locationUrl) {
+                text += `\n📍 *Lokasi Pengiriman (Google Maps):*\n${locationUrl}\n`;
+            } else {
+                text += `\n📍 *Alamat Pengiriman:* (Mohon ketikkan alamat lengkap Anda di sini)\n`;
+            }
+
+            text += `\nMohon diproses pesanannya ya, terima kasih!`;
+
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function setFilter(flavor) {
+            currentFilter = flavor;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-amber-500', 'text-white', 'shadow-md');
+                btn.classList.add('bg-gray-100', 'text-gray-600');
+            });
+            event.currentTarget.classList.add('bg-amber-500', 'text-white', 'shadow-md');
+            renderProducts();
+        }
+
+        function filterProducts() {
+            renderProducts();
+        }
+
+        function toggleFaq(id) {
+            const ans = document.getElementById(`faq-answer-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            ans.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        renderProducts();
+    </script>
+</body>
+</html>
