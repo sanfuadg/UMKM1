@@ -8,7 +8,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // Data menu varian rasa QueenChip
         $products = [
             [
                 'id' => 1,
