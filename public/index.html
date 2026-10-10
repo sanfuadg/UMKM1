@@ -345,7 +345,7 @@
                 </div>
             </div>
             <div class="border-t border-amber-900/60 pt-8 text-center text-xs text-amber-200/50">
-                &copy; {{ date('Y') }} QueenChip Official. Built with Laravel 13.
+                &copy; 2026 QueenChip Official. Static Web Deployment.
             </div>
         </div>
     </footer>
@@ -391,7 +391,44 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        const products = @json($products);
+        const products = [
+            {
+                id: 1,
+                name: "Keripik Pisang Coklat Lumer",
+                flavor: "Coklat",
+                badge: "Best Seller",
+                image: "https://images.unsplash.com/photo-1528751014936-863e6e4a319c?auto=format&fit=crop&w=600&q=80",
+                description: "Keripik pisang renyah dibaluri cokelat lumer manis gurih yang tebal dan melimpah.",
+                pricePer100g: 15000
+            },
+            {
+                id: 2,
+                name: "Keripik Pisang Strawberry Lumer",
+                flavor: "Strawberry",
+                badge: "Favorit",
+                image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80",
+                description: "Sensasi rasa manis asam segar dari cokelat glaze stroberi berwarna pink yang manis.",
+                pricePer100g: 15000
+            },
+            {
+                id: 3,
+                name: "Keripik Pisang Matcha Lumer",
+                flavor: "Matcha",
+                badge: "Top Choice",
+                image: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=600&q=80",
+                description: "Aroma teh hijau khas Jepang berpadu dengan gurihnya keripik pisang pilihan.",
+                pricePer100g: 16000
+            },
+            {
+                id: 4,
+                name: "Keripik Pisang Tiramisu Lumer",
+                flavor: "Tiramisu",
+                badge: "New Flavor",
+                image: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=600&q=80",
+                description: "Perpaduan rasa kopi, krim, dan keju tiramisu yang lezat dan bikin ketagihan.",
+                pricePer100g: 16000
+            }
+        ];
 
         let cart = [];
         let currentFilter = 'all';
@@ -449,6 +486,10 @@
             const modal = document.getElementById('product-modal');
             const content = document.getElementById('modal-content');
 
+            const price250 = Math.round(product.pricePer100g * 2.3);
+            const price500 = Math.round(product.pricePer100g * 4.2);
+            const price1000 = Math.round(product.pricePer100g * 8);
+
             content.innerHTML = `
                 <div class="flex items-center gap-4">
                     <img src="${product.image}" class="w-20 h-20 rounded-2xl object-cover">
@@ -466,17 +507,17 @@
                             <span class="block font-bold text-sm">100 Gram</span>
                             <span class="text-xs text-amber-700 font-bold">Rp ${product.pricePer100g.toLocaleString('id-ID')}</span>
                         </button>
-                        <button onclick="selectSize(250, ${product.pricePer100g * 2.3})" class="size-btn border-2 border-gray-200 p-3 rounded-2xl text-left">
+                        <button onclick="selectSize(250, ${price250})" class="size-btn border-2 border-gray-200 p-3 rounded-2xl text-left">
                             <span class="block font-bold text-sm">250 Gram</span>
-                            <span class="text-xs text-gray-500 font-bold">Rp ${(product.pricePer100g * 2.3).toLocaleString('id-ID')}</span>
+                            <span class="text-xs text-gray-500 font-bold">Rp ${price250.toLocaleString('id-ID')}</span>
                         </button>
-                        <button onclick="selectSize(500, ${product.pricePer100g * 4.2})" class="size-btn border-2 border-gray-200 p-3 rounded-2xl text-left">
+                        <button onclick="selectSize(500, ${price500})" class="size-btn border-2 border-gray-200 p-3 rounded-2xl text-left">
                             <span class="block font-bold text-sm">500 Gram</span>
-                            <span class="text-xs text-gray-500 font-bold">Rp ${(product.pricePer100g * 4.2).toLocaleString('id-ID')}</span>
+                            <span class="text-xs text-gray-500 font-bold">Rp ${price500.toLocaleString('id-ID')}</span>
                         </button>
-                        <button onclick="selectSize(1000, ${product.pricePer100g * 8})" class="size-btn border-2 border-gray-200 p-3 rounded-2xl text-left">
+                        <button onclick="selectSize(1000, ${price1000})" class="size-btn border-2 border-gray-200 p-3 rounded-2xl text-left">
                             <span class="block font-bold text-sm">1 KG (Hemat)</span>
-                            <span class="text-xs text-gray-500 font-bold">Rp ${(product.pricePer100g * 8).toLocaleString('id-ID')}</span>
+                            <span class="text-xs text-gray-500 font-bold">Rp ${price1000.toLocaleString('id-ID')}</span>
                         </button>
                     </div>
                 </div>
